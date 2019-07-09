@@ -7,7 +7,22 @@ class Dmidecode < Formula
     
     def install
         system "make"
-        system "make install"
+
+        # Install dmidecode
+        bin.install "dmidecode"
+        man8.install "man/dmidecode.8"
+
+        # Install biosdecode
+        bin.install "biosdecode"
+        man8.install "man/biosdecode.8"
+
+        # Install ownership
+        bin.install "ownership"
+        man8.install "man/ownership.8"
+
+        # Install vpddecode
+        bin.install "vpddecode"
+        man8.install "man/vpddecode.8"
     end
 
     test do
